@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { Box } from '@mui/system';
 import { WiSnowflakeCold } from 'react-icons/wi';
 import { IconContext } from 'react-icons';
+import MobileAccordionDetails from './MobileAccordionDetails';
 
 interface Props {
   resortName: string;
@@ -28,18 +29,6 @@ const MobileAccordion = ({ resortName, amountSnow }: Props) => {
         aria-controls="panel1bh-content"
         id="panel1bh-header"
       >
-        {/* <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            width: '100%',
-          }}
-        > */}
-        {/* <Box
-          sx={{
-            display: 'flex',
-          }}
-        > */}
         <Typography sx={{ width: '33%', flexShrink: 0, alignSelf: 'center' }}>
           {resortName}
         </Typography>
@@ -49,13 +38,14 @@ const MobileAccordion = ({ resortName, amountSnow }: Props) => {
         <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
           This Week: {amountSnow}"
         </Typography>
-        {/* </Box> */}
-        {/* <Typography sx={{}}>Detail Forecast</Typography> */}
-        {/* </Box> */}
       </AccordionSummary>
-      <AccordionDetails>
-        <Typography>It's about to snow scro'</Typography>
-      </AccordionDetails>
+      <MobileAccordionDetails
+        weekDay="Today"
+        dailySnow={7}
+        highTemp={30}
+        lowTemp={17}
+        wind={10}
+      />
     </Accordion>
   );
 };
