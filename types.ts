@@ -5,7 +5,8 @@ export interface Resort {
   pass: 'ikon' | 'epic';
 }
 
-interface WeatherParent {
+export interface Weather {
+  datetime: string;
   high_temp: number;
   min_temp: number;
   pop: number;
@@ -13,14 +14,6 @@ interface WeatherParent {
   wind_gust_sped: number;
   resort_id: string;
   weather_code: number;
-}
-
-export interface WeatherResponse extends WeatherParent {
-  datetime: string;
-}
-
-export interface Weather extends WeatherParent {
-  datetime: Date;
 }
 
 export interface WeatherObject {

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Resort, Weather, WeatherObject, WeatherResponse } from '../types';
+import { Resort, Weather, WeatherObject } from '../types';
 
 const baseUrl = 'http://127.0.0.1:8080/api';
 
@@ -21,18 +21,14 @@ export const fetchWeather = async (resortId: string[]) => {
   let resortWeather: WeatherObject = {};
 
   for (const resort of resortId) {
-    const weatherReponse = await axios.get<WeatherResponse[]>(
+    const weatherReponse = await axios.get<Weather[]>(
       `${baseUrl}/weather/${resort}`,
     );
-    const mappedWeather = weatherReponse.data.map((x: WeatherResponse) => {
-      const newWeather: Weather = { ...x, datetime: new Date(x.datetime) };
-      return newWeather;
-    });
-    const sortedWeather = mappedWeather.sort(
-      //@ts-ignore
-      (a: Weather, b: Weather) => a.datetime - b.datetime,
-    );
 
+    const sortedWeather = weatherReponse.data.sort(
+      //@ts-ignore
+      (a: Weathere, b: Weather) => a.datetime - b.datetime,
+    );
     resortWeather[resort] = sortedWeather;
   }
   console.log(resortWeather);
