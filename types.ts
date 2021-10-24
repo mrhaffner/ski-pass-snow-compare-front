@@ -1,8 +1,15 @@
-export interface Resort {
+export type Pass = 'ikon' | 'epic';
+
+export interface ResortBase {
   id: string;
   name: string;
   state: string;
-  pass: 'ikon' | 'epic';
+  pass: Pass;
+}
+
+export interface Resort extends ResortBase {
+  weather: Weather[];
+  snowTotal: number;
 }
 
 export interface Weather {

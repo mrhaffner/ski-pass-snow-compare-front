@@ -1,37 +1,39 @@
 import axios from 'axios';
-import { Resort, Weather, WeatherObject } from '../types';
+import { Pass, Resort, ResortBase, Weather, WeatherObject } from '../types';
 
 const baseUrl = 'http://127.0.0.1:8080/api';
 
 export const fetchResortData = async () => {
-  const resortsResponse = await axios.get<Resort[]>(`${baseUrl}/resorts`);
+  const resortsResponse = await axios.get<ResortBase[]>(`${baseUrl}/resorts`);
   const ikonResorts = resortsResponse.data.filter(
-    (x: Resort) => x.pass === 'ikon',
+    (x: ResortBase) => x.pass === 'ikon',
   );
   const epicResorts = resortsResponse.data.filter(
-    (x: Resort) => x.pass === 'epic',
+    (x: ResortBase) => x.pass === 'epic',
   );
-  console.log(epicResorts);
-  console.log(ikonResorts);
-
   return { epicResorts, ikonResorts };
 };
 
-export const fetchWeather = async (resortId: string[]) => {
-  let resortWeather: WeatherObject = {};
+export const fetchWeather = async (resortData: ResortBase[]) => {
+  let resorts: Resort[] = [];
 
-  for (const resort of resortId) {
+  for (const resort of resortData) {
+    console.log(resort);
+
     const weatherReponse = await axios.get<Weather[]>(
-      `${baseUrl}/weather/${resort}`,
+      `${baseUrl}/weather/${resort.id}`,
     );
 
     const sortedWeather = weatherReponse.data.sort(
       //@ts-ignore
       (a: Weathere, b: Weather) => a.datetime - b.datetime,
     );
-    resortWeather[resort] = sortedWeather;
+    const snowTotal = sortedWeather.reduce(
+      (previousValue, currentValue) => previousValue + currentValue.snow,
+      0,
+    );
+    resorts.push({ ...resort, snowTotal, weather: sortedWeather });
   }
-  console.log(resortWeather);
 
-  return resortWeather;
+  return resorts.sort((a, b) => b.snowTotal - a.snowTotal);
 };
