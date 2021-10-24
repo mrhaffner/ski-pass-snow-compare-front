@@ -3,33 +3,24 @@ import { WiSnowflakeCold } from 'react-icons/wi';
 import { WiStrongWind } from 'react-icons/wi';
 import { IconContext } from 'react-icons';
 import { Box } from '@mui/system';
+import { MobileDay, Weather } from '../../types';
 
 interface Props {
-  weekDay: String;
-  dailySnow: number;
-  highTemp: number;
-  lowTemp: number;
-  wind: number;
+  weather: Weather;
+  day: MobileDay;
 }
 
-const MobileAccordionDetails = ({
-  weekDay,
-  dailySnow,
-  highTemp,
-  lowTemp,
-  wind,
-}: Props) => {
+const MobileAccordionDetails = ({ weather, day }: Props) => {
   return (
     <AccordionDetails sx={{ display: 'flex', justifyContent: 'space-between' }}>
-      <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
-        {weekDay}
-      </Typography>
+      <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>{day}</Typography>
       <Box sx={{ display: 'flex' }}>
         <IconContext.Provider value={{ size: '2rem' }}>
           <WiSnowflakeCold />
+          {/* conditional */}
         </IconContext.Provider>
         <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
-          {dailySnow}"
+          {weather.snow}"{/* convert to freedom */}
         </Typography>
       </Box>
       <Box sx={{ display: 'flex' }}>
@@ -37,15 +28,15 @@ const MobileAccordionDetails = ({
           <WiStrongWind />
         </IconContext.Provider>
         <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
-          {wind} mph
+          {weather.wind_gust_speed} mph
         </Typography>
       </Box>
       <Box sx={{ display: 'flex', gap: '6px' }}>
         <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
-          {highTemp}°
+          {weather.high_temp}°
         </Typography>
         <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
-          {lowTemp}°
+          {weather.min_temp}°
         </Typography>
       </Box>
     </AccordionDetails>

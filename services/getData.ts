@@ -18,15 +18,13 @@ export const fetchWeather = async (resortData: ResortBase[]) => {
   let resorts: Resort[] = [];
 
   for (const resort of resortData) {
-    console.log(resort);
-
     const weatherReponse = await axios.get<Weather[]>(
       `${baseUrl}/weather/${resort.id}`,
     );
 
     const sortedWeather = weatherReponse.data.sort(
       //@ts-ignore
-      (a: Weathere, b: Weather) => a.datetime - b.datetime,
+      (a: Weather, b: Weather) => a.datetime - b.datetime,
     );
     const snowTotal = sortedWeather.reduce(
       (previousValue, currentValue) => previousValue + currentValue.snow,

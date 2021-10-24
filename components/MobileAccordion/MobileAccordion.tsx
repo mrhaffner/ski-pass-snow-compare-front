@@ -10,13 +10,14 @@ import { Box } from '@mui/system';
 import { WiSnowflakeCold } from 'react-icons/wi';
 import { IconContext } from 'react-icons';
 import MobileAccordionDetails from './MobileAccordionDetails';
+import { Resort, Weather } from '../../types';
+import { mobileDay } from '../../constants/days';
 
 interface Props {
-  resortName: string;
-  amountSnow: number;
+  resort: Resort;
 }
 
-const MobileAccordion = ({ resortName, amountSnow }: Props) => {
+const MobileAccordion = ({ resort }: Props) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -30,22 +31,22 @@ const MobileAccordion = ({ resortName, amountSnow }: Props) => {
         id="panel1bh-header"
       >
         <Typography sx={{ width: '33%', flexShrink: 0, alignSelf: 'center' }}>
-          {resortName}
+          {resort.name}
         </Typography>
         <IconContext.Provider value={{ size: '2rem' }}>
           <WiSnowflakeCold />
         </IconContext.Provider>
         <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
-          This Week: {amountSnow}"
+          This Week: {resort.snowTotal}"{/* convert to freedom */}
         </Typography>
       </AccordionSummary>
-      <MobileAccordionDetails
-        weekDay="Today"
-        dailySnow={7}
-        highTemp={30}
-        lowTemp={17}
-        wind={10}
-      />
+      {resort.weather.map((w: Weather, i: number) => (
+        <MobileAccordionDetails
+          weather={w}
+          day={mobileDay[i]}
+          key={w.datetime}
+        />
+      ))}
     </Accordion>
   );
 };

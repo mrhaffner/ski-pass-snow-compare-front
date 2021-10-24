@@ -18,7 +18,7 @@ export interface Weather {
   min_temp: number;
   pop: number;
   snow: number;
-  wind_gust_sped: number;
+  wind_gust_speed: number;
   resort_id: string;
   weather_code: number;
 }
@@ -26,3 +26,13 @@ export interface Weather {
 export interface WeatherObject {
   [key: string]: Weather[];
 }
+
+export type MobileDay =
+  | 'Today'
+  | 'Mon'
+  | 'Tue'
+  | 'Wed'
+  | 'Thu'
+  | 'Fri'
+  | 'Sat'
+  | 'Sun';
