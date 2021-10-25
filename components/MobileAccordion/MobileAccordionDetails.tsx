@@ -1,4 +1,4 @@
-import { AccordionDetails, Typography } from '@mui/material';
+import { AccordionDetails, Stack, Typography } from '@mui/material';
 import { WiSnowflakeCold } from 'react-icons/wi';
 import { WiStrongWind } from 'react-icons/wi';
 import { IconContext } from 'react-icons';
@@ -12,33 +12,43 @@ interface Props {
 
 const MobileAccordionDetails = ({ weather, day }: Props) => {
   return (
-    <AccordionDetails sx={{ display: 'flex', justifyContent: 'space-between' }}>
-      <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>{day}</Typography>
-      <Box sx={{ display: 'flex' }}>
-        <IconContext.Provider value={{ size: '2rem' }}>
-          <WiSnowflakeCold />
-          {/* conditional */}
-        </IconContext.Provider>
-        <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
-          {weather.snow}"{/* convert to freedom */}
+    <AccordionDetails>
+      <Stack direction="row" justifyContent="space-between">
+        <Typography sx={{ flexShrink: 0, alignSelf: 'center', width: '25%' }}>
+          {day}
         </Typography>
-      </Box>
-      <Box sx={{ display: 'flex' }}>
-        <IconContext.Provider value={{ size: '2rem' }}>
-          <WiStrongWind />
-        </IconContext.Provider>
-        <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
-          {weather.wind_gust_spd} mph
-        </Typography>
-      </Box>
-      <Box sx={{ display: 'flex', gap: '6px' }}>
-        <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
-          {weather.high_temp}°
-        </Typography>
-        <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
-          {weather.min_temp}°
-        </Typography>
-      </Box>
+        <Box sx={{ display: 'flex', width: '25%' }}>
+          <IconContext.Provider value={{ size: '2rem' }}>
+            <WiSnowflakeCold />
+            {/* conditional */}
+          </IconContext.Provider>
+          <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
+            {weather.snow}"{/* convert to freedom */}
+          </Typography>
+        </Box>
+        <Box sx={{ display: 'flex', width: '25%' }}>
+          <IconContext.Provider value={{ size: '2rem' }}>
+            <WiStrongWind />
+          </IconContext.Provider>
+          <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
+            {weather.wind_gust_spd} mph
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            display: 'flex',
+            gap: '6px',
+            width: '25%',
+          }}
+        >
+          <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
+            {weather.high_temp}°
+          </Typography>
+          <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
+            {weather.min_temp}°
+          </Typography>
+        </Box>
+      </Stack>
     </AccordionDetails>
   );
 };
