@@ -1,12 +1,6 @@
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Typography,
-} from '@mui/material';
+import { Accordion, AccordionSummary, Typography } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useState } from 'react';
-import { Box } from '@mui/system';
 import { WiSnowflakeCold } from 'react-icons/wi';
 import { IconContext } from 'react-icons';
 import MobileAccordionDetails from './MobileAccordionDetails';
@@ -30,14 +24,14 @@ const MobileAccordion = ({ resort }: Props) => {
         aria-controls="panel1bh-content"
         id="panel1bh-header"
       >
-        <Typography sx={{ width: '33%', flexShrink: 0, alignSelf: 'center' }}>
+        <Typography sx={{ width: '50%', flexShrink: 0, alignSelf: 'center' }}>
           {resort.name}
         </Typography>
         <IconContext.Provider value={{ size: '2rem' }}>
           <WiSnowflakeCold />
         </IconContext.Provider>
         <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
-          This Week: {resort.snowTotal}"{/* convert to freedom */}
+          This Week: {resort.snowTotal}"
         </Typography>
       </AccordionSummary>
       {resort.weather.map((w: Weather, i: number) => (
