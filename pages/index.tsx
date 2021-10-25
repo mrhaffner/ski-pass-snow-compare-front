@@ -12,7 +12,7 @@ interface Props {
 
 const Home = ({ ikon, epic }: Props) => {
   return (
-    <Container>
+    <Container sx={{ marginY: 4 }}>
       <Typography variant="h3" gutterBottom align="center">
         Epic vs Ikon
       </Typography>
@@ -38,6 +38,7 @@ const Home = ({ ikon, epic }: Props) => {
           justifyContent: 'space-between',
           alignItems: 'center',
         }}
+        mt={3}
       >
         <Typography variant="h5" gutterBottom>
           IKON Base Resorts
