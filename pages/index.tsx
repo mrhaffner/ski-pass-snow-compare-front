@@ -13,19 +13,18 @@ interface Props {
 const Home = ({ ikon, epic }: Props) => {
   return (
     <Container sx={{ marginY: 4 }}>
-      <Typography variant="h3" gutterBottom align="center">
+      <Typography variant="h5" component="h1" gutterBottom align="center">
         Epic vs Ikon
       </Typography>
       <Box
         sx={{
           display: 'flex',
           justifyContent: 'space-between',
-          alignItems: 'center',
+          alignItems: 'baseline',
         }}
+        mb={1}
       >
-        <Typography variant="h5" gutterBottom>
-          Epic Base Resorts
-        </Typography>
+        <Typography component="h2">Epic Base Resorts</Typography>
         <Typography>Total Snow: {getPassSnowTotal(epic)}"</Typography>
       </Box>
       {/* have a component who's job it is to decide what to map here? */}
@@ -36,13 +35,12 @@ const Home = ({ ikon, epic }: Props) => {
         sx={{
           display: 'flex',
           justifyContent: 'space-between',
-          alignItems: 'center',
+          alignItems: 'baseline',
         }}
         mt={3}
+        mb={1}
       >
-        <Typography variant="h5" gutterBottom>
-          IKON Base Resorts
-        </Typography>
+        <Typography component="h2">IKON Base Resorts</Typography>
         <Typography>Total Snow: {getPassSnowTotal(ikon)}"</Typography>
       </Box>
       {ikon.map((r: Resort) => (
