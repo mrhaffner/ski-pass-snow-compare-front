@@ -1,5 +1,10 @@
 import axios from 'axios';
-import { Pass, Resort, ResortBase, Weather, WeatherObject } from '../types';
+import { Resort, ResortBase, Weather } from '../types';
+import {
+  celsiusToFahrenheit,
+  millimeterToInch,
+  mpsToMph,
+} from '../utilities/unitConvert';
 
 const baseUrl = 'http://127.0.0.1:8080/api';
 
@@ -22,7 +27,17 @@ export const fetchWeather = async (resortData: ResortBase[]) => {
       `${baseUrl}/weather/${resort.id}`,
     );
 
-    const sortedWeather = weatherReponse.data.sort(
+    const weatherInFreedomUnits = weatherReponse.data.map((w: Weather) => {
+      return {
+        ...w,
+        high_temp: celsiusToFahrenheit(w.high_temp),
+        min_temp: celsiusToFahrenheit(w.min_temp),
+        snow: millimeterToInch(w.snow),
+        wind_gust_spd: mpsToMph(w.wind_gust_spd),
+      };
+    });
+
+    const sortedWeather = weatherInFreedomUnits.sort(
       //@ts-ignore
       (a: Weather, b: Weather) => a.datetime - b.datetime,
     );
