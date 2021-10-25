@@ -4,6 +4,7 @@ import { useState } from 'react';
 import MobileAccordionDetails from './MobileAccordionDetails';
 import { Resort, Weather } from '../../types';
 import { mobileDay } from '../../constants/days';
+import { trimResortName } from '../../utilities/string';
 
 interface Props {
   resort: Resort;
@@ -11,6 +12,7 @@ interface Props {
 
 const MobileAccordion = ({ resort }: Props) => {
   const [expanded, setExpanded] = useState(false);
+  const resortName = trimResortName(resort.name);
 
   return (
     <Accordion
@@ -23,7 +25,7 @@ const MobileAccordion = ({ resort }: Props) => {
         id="panel1bh-header"
       >
         <Typography sx={{ width: '50%', flexShrink: 0, alignSelf: 'center' }}>
-          {resort.name}
+          {resortName}
         </Typography>
         <AcUnit sx={{ fontSize: 18, alignSelf: 'center' }} />
         <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
