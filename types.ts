@@ -18,7 +18,7 @@ export interface Weather {
   min_temp: number;
   pop: number;
   snow: number;
-  wind_gust_speed: number;
+  wind_gust_spd: number;
   resort_id: string;
   weather_code: number;
 }

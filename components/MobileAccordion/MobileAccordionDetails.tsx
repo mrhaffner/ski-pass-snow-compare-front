@@ -28,7 +28,7 @@ const MobileAccordionDetails = ({ weather, day }: Props) => {
           <WiStrongWind />
         </IconContext.Provider>
         <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
-          {weather.wind_gust_speed} mph
+          {weather.wind_gust_spd} mph
         </Typography>
       </Box>
       <Box sx={{ display: 'flex', gap: '6px' }}>
