@@ -1,8 +1,6 @@
 import { Accordion, AccordionSummary, Typography } from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { AcUnit, ExpandMore } from '@mui/icons-material';
 import { useState } from 'react';
-import { WiSnowflakeCold } from 'react-icons/wi';
-import { IconContext } from 'react-icons';
 import MobileAccordionDetails from './MobileAccordionDetails';
 import { Resort, Weather } from '../../types';
 import { mobileDay } from '../../constants/days';
@@ -20,16 +18,14 @@ const MobileAccordion = ({ resort }: Props) => {
       onChange={() => setExpanded(expanded ? false : true)}
     >
       <AccordionSummary
-        expandIcon={<ExpandMoreIcon />}
+        expandIcon={<ExpandMore />}
         aria-controls="panel1bh-content"
         id="panel1bh-header"
       >
         <Typography sx={{ width: '50%', flexShrink: 0, alignSelf: 'center' }}>
           {resort.name}
         </Typography>
-        <IconContext.Provider value={{ size: '2rem' }}>
-          <WiSnowflakeCold />
-        </IconContext.Provider>
+        <AcUnit sx={{ fontSize: 18, alignSelf: 'center' }} />
         <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
           This Week: {resort.snowTotal}"
         </Typography>

@@ -1,7 +1,5 @@
 import { AccordionDetails, Stack, Typography } from '@mui/material';
-import { WiSnowflakeCold } from 'react-icons/wi';
-import { WiStrongWind } from 'react-icons/wi';
-import { IconContext } from 'react-icons';
+import { AcUnit, Air } from '@mui/icons-material';
 import { Box } from '@mui/system';
 import { MobileDay, Weather } from '../../types';
 
@@ -18,18 +16,13 @@ const MobileAccordionDetails = ({ weather, day }: Props) => {
           {day}
         </Typography>
         <Box sx={{ display: 'flex', width: '25%' }}>
-          <IconContext.Provider value={{ size: '2rem' }}>
-            <WiSnowflakeCold />
-            {/* conditional */}
-          </IconContext.Provider>
+          <AcUnit sx={{ fontSize: 18, alignSelf: 'center' }} />
           <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
-            {weather.snow}"{/* convert to freedom */}
+            {weather.snow}"
           </Typography>
         </Box>
         <Box sx={{ display: 'flex', width: '25%' }}>
-          <IconContext.Provider value={{ size: '2rem' }}>
-            <WiStrongWind />
-          </IconContext.Provider>
+          <Air sx={{ fontSize: 20, alignSelf: 'center' }} />
           <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
             {weather.wind_gust_spd} mph
           </Typography>
