@@ -32,6 +32,7 @@ const MobileAccordionDetails = ({ weather, day }: Props) => {
             display: 'flex',
             gap: '6px',
             width: '25%',
+            justifyContent: 'flex-end',
           }}
         >
           <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
