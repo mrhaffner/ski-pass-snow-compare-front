@@ -1,7 +1,9 @@
 import { Container, Typography } from '@mui/material';
+import { Box } from '@mui/system';
 import MobileAccordion from '../components/MobileAccordion';
 import { fetchResortData, fetchWeather } from '../services/getData';
 import { Resort } from '../types';
+import { getPassSnowTotal } from '../utilities/math';
 
 interface Props {
   ikon: Resort[];
@@ -14,16 +16,34 @@ const Home = ({ ikon, epic }: Props) => {
       <Typography variant="h3" gutterBottom align="center">
         Epic vs Ikon
       </Typography>
-      <Typography variant="h5" gutterBottom align="center">
-        Epic Base Resorts
-      </Typography>
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+      >
+        <Typography variant="h5" gutterBottom>
+          Epic Base Resorts
+        </Typography>
+        <Typography>Total Snow: {getPassSnowTotal(epic)}"</Typography>
+      </Box>
       {/* have a component who's job it is to decide what to map here? */}
       {epic.map((r: Resort) => (
         <MobileAccordion resort={r} key={r.id} />
       ))}
-      <Typography variant="h5" gutterBottom align="center">
-        IKON Base Resorts
-      </Typography>
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+      >
+        <Typography variant="h5" gutterBottom>
+          IKON Base Resorts
+        </Typography>
+        <Typography>Total Snow: {getPassSnowTotal(ikon)}"</Typography>
+      </Box>
       {ikon.map((r: Resort) => (
         <MobileAccordion resort={r} key={r.id} />
       ))}
