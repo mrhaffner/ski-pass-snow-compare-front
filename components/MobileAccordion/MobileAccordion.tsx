@@ -5,6 +5,7 @@ import MobileAccordionDetails from './MobileAccordionDetails';
 import { Resort, Weather } from '../../types';
 import { mobileDay } from '../../constants/days';
 import { trimResortName } from '../../utilities/string';
+import { Box } from '@mui/system';
 
 interface Props {
   resort: Resort;
@@ -27,10 +28,25 @@ const MobileAccordion = ({ resort }: Props) => {
         <Typography sx={{ width: '50%', flexShrink: 0, alignSelf: 'center' }}>
           {resortName}
         </Typography>
-        <AcUnit sx={{ fontSize: 18, alignSelf: 'center' }} />
-        <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
-          This Week: {resort.snowTotal}"
-        </Typography>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            width: '125px',
+          }}
+        >
+          <Box sx={{ display: 'flex' }}>
+            <AcUnit
+              sx={{ fontSize: 18, alignSelf: 'center', marginRight: '2px' }}
+            />
+            <Typography variant="body2" sx={{ alignSelf: 'center' }}>
+              This Week:
+            </Typography>
+          </Box>
+          <Box>
+            <Typography sx={{ flexShrink: 0 }}>{resort.snowTotal}"</Typography>
+          </Box>
+        </Box>
       </AccordionSummary>
       {resort.weather.map((w: Weather, i: number) => (
         <MobileAccordionDetails
