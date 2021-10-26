@@ -56,12 +56,20 @@ const MobileAccordionDetails = ({ weather, day }: Props) => {
             justifyContent: 'flex-end',
           }}
         >
-          <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
-            {weather.high_temp}°
-          </Typography>
-          <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
-            {weather.min_temp}°
-          </Typography>
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              width: '59px',
+            }}
+          >
+            <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
+              {weather.high_temp}°
+            </Typography>
+            <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
+              {weather.min_temp}°
+            </Typography>
+          </Box>
         </Box>
       </Stack>
     </AccordionDetails>
