@@ -12,18 +12,32 @@ const MobileAccordionDetails = ({ weather, day }: Props) => {
   return (
     <AccordionDetails>
       <Stack direction="row" justifyContent="space-between">
-        <Typography sx={{ flexShrink: 0, alignSelf: 'center', width: '25%' }}>
+        <Typography sx={{ flexShrink: 0, alignSelf: 'center', width: '22%' }}>
           {day}
         </Typography>
-        <Box sx={{ display: 'flex', width: '20%' }}>
-          <AcUnit sx={{ fontSize: 18, alignSelf: 'center' }} />
-          <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
-            {weather.snow}"
-          </Typography>
-        </Box>
         <Box
           sx={{
-            width: '30%',
+            display: 'flex',
+            width: '25%',
+          }}
+        >
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              width: '50px',
+            }}
+          >
+            <AcUnit sx={{ fontSize: 18, alignSelf: 'center' }} />
+            <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
+              {weather.snow}"
+            </Typography>
+          </Box>
+        </Box>
+
+        <Box
+          sx={{
+            width: '28%',
           }}
         >
           <Box
