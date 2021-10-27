@@ -34,7 +34,7 @@ const Home = ({ ikon, epic }: Props) => {
       </Box>
       <Container maxWidth="xl">
         <Stack sx={{ width: '100%' }} direction={matches ? 'row' : 'column'}>
-          <Container maxWidth="sm">
+          <Container maxWidth="sm" sx={{ padding: 0 }}>
             <Box
               sx={{
                 display: 'flex',
@@ -47,7 +47,7 @@ const Home = ({ ikon, epic }: Props) => {
               <Typography variant="h6" component="h2">
                 Epic Base Resorts
               </Typography>
-              <Typography>Total Snow: {getPassSnowTotal(epic)}"</Typography>
+              <Typography>7 Day Snow: {getPassSnowTotal(epic)}"</Typography>
             </Box>
             {epic.map((r: Resort) => (
               <MobileAccordion resort={r} key={r.id} />
