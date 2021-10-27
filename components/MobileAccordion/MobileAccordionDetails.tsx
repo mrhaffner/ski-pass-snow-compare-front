@@ -14,9 +14,16 @@ const MobileAccordionDetails = ({ weather, day }: Props) => {
       sx={{
         background: 'rgba( 255, 255, 255, 0.25 )',
         backdropFilter: 'blur( 4px )',
+        my: '3px',
       }}
     >
-      <Stack direction="row" justifyContent="space-between">
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+        mb="-5px"
+        mt="5px"
+      >
         <Typography sx={{ flexShrink: 0, alignSelf: 'center', width: '22%' }}>
           {day}
         </Typography>

@@ -19,7 +19,11 @@ const MobileAccordion = ({ resort }: Props) => {
     <Accordion
       expanded={expanded}
       onChange={() => setExpanded(expanded ? false : true)}
-      sx={{ background: 'rgba( 255, 255, 255, 0 )' }}
+      sx={{
+        background: 'rgba( 255, 255, 255, 0 )',
+        border: 'none',
+        boxShadow: 0,
+      }}
     >
       <AccordionSummary
         expandIcon={<ExpandMore />}
