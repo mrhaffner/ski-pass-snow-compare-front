@@ -1,12 +1,11 @@
 import { MobileDay } from '../types';
 
 export const mobileDay: MobileDay[] = [
-  'Today',
+  'Sun',
   'Mon',
   'Tue',
   'Wed',
   'Thu',
   'Fri',
   'Sat',
-  'Sun',
 ];

@@ -6,6 +6,7 @@ import { Resort, Weather } from '../../types';
 import { mobileDay } from '../../constants/days';
 import { trimResortName } from '../../utilities/string';
 import { Box } from '@mui/system';
+import { getDayName } from '../../utilities/unitConvert';
 
 interface Props {
   resort: Resort;
@@ -51,7 +52,7 @@ const MobileAccordion = ({ resort }: Props) => {
       {resort.weather.map((w: Weather, i: number) => (
         <MobileAccordionDetails
           weather={w}
-          day={mobileDay[i]}
+          day={getDayName(i)}
           key={w.datetime}
         />
       ))}
