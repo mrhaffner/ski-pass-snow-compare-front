@@ -2,6 +2,7 @@ import { AccordionDetails, Stack, Typography } from '@mui/material';
 import { AcUnit, Air } from '@mui/icons-material';
 import { Box } from '@mui/system';
 import { MobileDay, Weather } from '../../types';
+import { blueGrey } from '@mui/material/colors';
 
 interface Props {
   weather: Weather;
@@ -69,7 +70,10 @@ const MobileAccordionDetails = ({ weather, day }: Props) => {
               <Typography
                 variant="body2"
                 component="span"
-                sx={{ flexShrink: 0, alignSelf: 'center' }}
+                sx={{
+                  flexShrink: 0,
+                  alignSelf: 'center',
+                }}
               >
                 mph
               </Typography>
@@ -91,10 +95,19 @@ const MobileAccordionDetails = ({ weather, day }: Props) => {
               width: '59px',
             }}
           >
-            <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
+            <Typography
+              color="white"
+              sx={{ flexShrink: 0, alignSelf: 'center' }}
+            >
               {weather.high_temp}°
             </Typography>
-            <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
+            <Typography
+              sx={{
+                flexShrink: 0,
+                alignSelf: 'center',
+                color: 'rgba(255, 255, 255, 0.6)',
+              }}
+            >
               {weather.min_temp}°
             </Typography>
           </Box>
