@@ -3,7 +3,6 @@ import { AcUnit, ExpandMore } from '@mui/icons-material';
 import { useState } from 'react';
 import MobileAccordionDetails from './MobileAccordionDetails';
 import { Resort, Weather } from '../../types';
-import { mobileDay } from '../../constants/days';
 import { trimResortName } from '../../utilities/string';
 import { Box } from '@mui/system';
 import { getDayName } from '../../utilities/unitConvert';
