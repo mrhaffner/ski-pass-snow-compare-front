@@ -13,7 +13,7 @@ interface Props {
 const Home = ({ ikon, epic }: Props) => {
   return (
     <Container maxWidth="sm" sx={{ marginY: 4 }}>
-      <Typography variant="h5" component="h1" align="center">
+      <Typography variant="h5" component="h1" align="center" color="white">
         Epic vs Ikon
       </Typography>
       <Box
@@ -24,11 +24,11 @@ const Home = ({ ikon, epic }: Props) => {
         }}
         mt={3}
         mb={1}
+        color="white"
       >
         <Typography component="h2">Epic Base Resorts</Typography>
         <Typography>Total Snow: {getPassSnowTotal(epic)}"</Typography>
       </Box>
-      {/* have a component who's job it is to decide what to map here? */}
       {epic.map((r: Resort) => (
         <MobileAccordion resort={r} key={r.id} />
       ))}
@@ -40,6 +40,7 @@ const Home = ({ ikon, epic }: Props) => {
         }}
         mt={3}
         mb={1}
+        color="white"
       >
         <Typography component="h2">IKON Base Resorts</Typography>
         <Typography>Total Snow: {getPassSnowTotal(ikon)}"</Typography>

@@ -13,7 +13,12 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
         </Head>
-        <body>
+        <body
+          style={{
+            background:
+              'linear-gradient(180deg, rgba(107,157,255,1) 33%, rgba(45,132,255,1) 88%) fixed',
+          }}
+        >
           <Main />
           <NextScript />
         </body>
