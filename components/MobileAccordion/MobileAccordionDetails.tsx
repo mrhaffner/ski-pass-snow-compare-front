@@ -1,8 +1,13 @@
-import { AccordionDetails, Stack, Typography } from '@mui/material';
+import {
+  AccordionDetails,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
 import { AcUnit, Air } from '@mui/icons-material';
 import { Box } from '@mui/system';
 import { MobileDay, Weather } from '../../types';
-import { blueGrey } from '@mui/material/colors';
 
 interface Props {
   weather: Weather;
@@ -10,6 +15,9 @@ interface Props {
 }
 
 const MobileAccordionDetails = ({ weather, day }: Props) => {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('sm'));
+
   return (
     <AccordionDetails
       sx={{
@@ -25,7 +33,13 @@ const MobileAccordionDetails = ({ weather, day }: Props) => {
         mb="-5px"
         mt="5px"
       >
-        <Typography sx={{ flexShrink: 0, alignSelf: 'center', width: '22%' }}>
+        <Typography
+          sx={{
+            flexShrink: 0,
+            alignSelf: 'center',
+            width: matches ? '25%' : '22%',
+          }}
+        >
           {day}
         </Typography>
         <Box
@@ -52,7 +66,7 @@ const MobileAccordionDetails = ({ weather, day }: Props) => {
 
         <Box
           sx={{
-            width: '28%',
+            width: matches ? '25%' : '28%',
           }}
         >
           <Box
@@ -85,7 +99,7 @@ const MobileAccordionDetails = ({ weather, day }: Props) => {
             display: 'flex',
             gap: '6px',
             width: '25%',
-            justifyContent: 'flex-end',
+            justifyContent: matches ? 'center' : 'flex-end',
           }}
         >
           <Box
