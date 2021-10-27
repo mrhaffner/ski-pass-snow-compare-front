@@ -10,7 +10,12 @@ interface Props {
 
 const MobileAccordionDetails = ({ weather, day }: Props) => {
   return (
-    <AccordionDetails>
+    <AccordionDetails
+      sx={{
+        background: 'rgba( 255, 255, 255, 0.25 )',
+        backdropFilter: 'blur( 4px )',
+      }}
+    >
       <Stack direction="row" justifyContent="space-between">
         <Typography sx={{ flexShrink: 0, alignSelf: 'center', width: '22%' }}>
           {day}

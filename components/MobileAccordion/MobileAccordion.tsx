@@ -19,11 +19,13 @@ const MobileAccordion = ({ resort }: Props) => {
     <Accordion
       expanded={expanded}
       onChange={() => setExpanded(expanded ? false : true)}
+      sx={{ background: 'rgba( 255, 255, 255, 0 )' }}
     >
       <AccordionSummary
         expandIcon={<ExpandMore />}
         aria-controls="panel1bh-content"
         id="panel1bh-header"
+        sx={{ background: 'white' }}
       >
         <Typography sx={{ width: '50%', flexShrink: 0, alignSelf: 'center' }}>
           {resortName}
