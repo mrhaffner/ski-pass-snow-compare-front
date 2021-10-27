@@ -1,4 +1,10 @@
-import { Accordion, AccordionSummary, Typography } from '@mui/material';
+import {
+  Accordion,
+  AccordionSummary,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
 import { AcUnit, ExpandMore } from '@mui/icons-material';
 import { useState } from 'react';
 import MobileAccordionDetails from './MobileAccordionDetails';
@@ -13,7 +19,9 @@ interface Props {
 
 const MobileAccordion = ({ resort }: Props) => {
   const [expanded, setExpanded] = useState(false);
-  const resortName = trimResortName(resort.name);
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('sm'));
+  const resortName = matches ? resort.name : trimResortName(resort.name);
 
   return (
     <Accordion
