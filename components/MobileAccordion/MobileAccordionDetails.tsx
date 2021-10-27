@@ -40,7 +40,9 @@ const MobileAccordionDetails = ({ weather, day }: Props) => {
               width: '50px',
             }}
           >
-            <AcUnit sx={{ fontSize: 18, alignSelf: 'center' }} />
+            <AcUnit
+              sx={{ fontSize: 18, alignSelf: 'center', color: 'white' }}
+            />
             <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
               {weather.snow}"
             </Typography>
@@ -59,7 +61,7 @@ const MobileAccordionDetails = ({ weather, day }: Props) => {
               maxWidth: '75px',
             }}
           >
-            <Air sx={{ fontSize: 20, alignSelf: 'center' }} />
+            <Air sx={{ fontSize: 20, alignSelf: 'center', color: 'white' }} />
             <Box sx={{ display: 'flex', gap: '2px' }}>
               <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
                 {weather.wind_gust_spd}

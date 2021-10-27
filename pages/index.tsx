@@ -43,7 +43,7 @@ const Home = ({ ikon, epic }: Props) => {
         color="white"
       >
         <Typography component="h2">IKON Base Resorts</Typography>
-        <Typography>Total Snow: {getPassSnowTotal(ikon)}"</Typography>
+        <Typography>7 Day Snow: {getPassSnowTotal(ikon)}"</Typography>
       </Box>
       {ikon.map((r: Resort) => (
         <MobileAccordion resort={r} key={r.id} />

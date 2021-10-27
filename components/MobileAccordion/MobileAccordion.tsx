@@ -41,9 +41,18 @@ const MobileAccordion = ({ resort }: Props) => {
             width: '125px',
           }}
         >
-          <Box sx={{ display: 'flex' }}>
+          <Box
+            sx={{
+              display: 'flex',
+            }}
+          >
             <AcUnit
-              sx={{ fontSize: 18, alignSelf: 'center', marginRight: '2px' }}
+              sx={{
+                fontSize: 18,
+                color: '#87CEFA',
+                alignSelf: 'center',
+                marginRight: '2px',
+              }}
             />
             <Typography variant="body2" sx={{ alignSelf: 'center' }}>
               This Week:
