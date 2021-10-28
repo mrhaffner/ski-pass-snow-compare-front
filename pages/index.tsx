@@ -126,11 +126,16 @@ const Home = ({ ikon, epic }: Props) => {
               color="#fff"
               underline="none"
               sx={{
+                ':hover': {
+                  backgroundColor: '#4FE2C1',
+                  transition:
+                    'color 0.2s linear,background 0.2s linear,border 0.2s linear',
+                },
                 ':after': {
                   backgroundColor: '#4FE2C1',
                   display: 'block',
                   height: '3px',
-                  width: '163px',
+                  width: '161px',
                   opacity: 1,
                   content: '""',
                   transition: 'width .3s ease-in-out,opacity .3s ease-in-out',
@@ -160,11 +165,16 @@ const Home = ({ ikon, epic }: Props) => {
               color="#fff"
               underline="none"
               sx={{
+                ':hover': {
+                  backgroundColor: '#4FE2C1',
+                  transition:
+                    'color 0.2s linear,background 0.2s linear,border 0.2s linear',
+                },
                 ':after': {
                   backgroundColor: '#4FE2C1',
                   display: 'block',
                   height: '3px',
-                  width: '83px',
+                  width: '80px',
                   opacity: 1,
                   content: '""',
                   transition: 'width .3s ease-in-out,opacity .3s ease-in-out',
