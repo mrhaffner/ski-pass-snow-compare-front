@@ -53,7 +53,7 @@ const Home = ({ ikon, epic }: Props) => {
               <MobileAccordion resort={r} key={r.id} />
             ))}
           </Container>
-          <Container maxWidth="sm">
+          <Container maxWidth="sm" sx={{ padding: 0 }}>
             <Box
               sx={{
                 display: 'flex',
