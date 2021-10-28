@@ -39,7 +39,10 @@ const MobileAccordion = ({ resort }: Props) => {
         id="panel1bh-header"
         sx={{ background: 'white' }}
       >
-        <Typography sx={{ width: '50%', flexShrink: 0, alignSelf: 'center' }}>
+        <Typography
+          component="h3"
+          sx={{ width: '50%', flexShrink: 0, alignSelf: 'center' }}
+        >
           {resortName}
         </Typography>
         <Box

@@ -27,8 +27,8 @@ const Home = ({ ikon, epic }: Props) => {
       >
         <Image
           src={TitleLogo}
-          width={250}
-          height={250}
+          width={matches ? 350 : 250}
+          height={matches ? 350 : 250}
           alt="Forecast Your Snow"
         />
       </Box>
