@@ -4,4 +4,4 @@ This project was built with:
 
 - NextJS / React
 - Typescript
-- SCSS + Material UI
+- Material UI
