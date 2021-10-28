@@ -17,6 +17,8 @@ export default class MyDocument extends Document {
           style={{
             background:
               'linear-gradient(180deg, rgba(45,132,255,1) 60%, rgba(107,157,255,1) 88%) fixed',
+            minHeight: '100vh',
+            position: 'relative',
           }}
         >
           <Main />
