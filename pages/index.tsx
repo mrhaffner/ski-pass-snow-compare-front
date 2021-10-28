@@ -47,7 +47,12 @@ const Home = ({ ikon, epic }: Props) => {
               <Typography variant="h6" component="h2">
                 Epic Base Resorts
               </Typography>
-              <Typography>7 Day Snow: {getPassSnowTotal(epic)}"</Typography>
+              <Typography>
+                7 Day Snow:{' '}
+                <span style={{ fontWeight: 600 }}>
+                  {getPassSnowTotal(epic)}"
+                </span>
+              </Typography>
             </Box>
             {epic.map((r: Resort) => (
               <MobileAccordion resort={r} key={r.id} />
@@ -67,7 +72,12 @@ const Home = ({ ikon, epic }: Props) => {
               <Typography variant="h6" component="h2">
                 IKON Base Resorts
               </Typography>
-              <Typography>7 Day Snow: {getPassSnowTotal(ikon)}"</Typography>
+              <Typography>
+                7 Day Snow:{' '}
+                <span style={{ fontWeight: 600 }}>
+                  {getPassSnowTotal(ikon)}"
+                </span>
+              </Typography>
             </Box>
             {ikon.map((r: Resort) => (
               <MobileAccordion resort={r} key={r.id} />
