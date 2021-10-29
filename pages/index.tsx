@@ -23,7 +23,7 @@ const Home = ({ ikon, epic }: Props) => {
   const matches = useMediaQuery(theme.breakpoints.up('lg'));
   return (
     <>
-      <Box sx={{ width: '100%', paddingBottom: matches ? '4rem ' : '7rem' }}>
+      <Box sx={{ width: '100%', paddingBottom: '4rem' }}>
         <Box
           sx={{
             width: '100%',
