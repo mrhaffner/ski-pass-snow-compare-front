@@ -23,13 +23,6 @@ export default class MyDocument extends Document {
         >
           <Main />
           <NextScript />
-          {/* <style jsx global>{`
-            #__next {
-              min-height: 100vh;
-              display: flex;
-              justify-content: space-between;
-            }
-          `}</style> */}
         </body>
       </Html>
     );
