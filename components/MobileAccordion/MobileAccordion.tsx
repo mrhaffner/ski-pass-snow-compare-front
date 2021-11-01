@@ -71,7 +71,7 @@ const MobileAccordion = ({ resort }: Props) => {
           </Box>
           <Box>
             <Typography color="#014574" fontWeight="600" sx={{ flexShrink: 0 }}>
-              {resort.snowTotal}"
+              {resort.snowTotal}&quot;
             </Typography>
           </Box>
         </Box>

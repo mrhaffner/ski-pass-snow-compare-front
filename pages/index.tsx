@@ -57,7 +57,7 @@ const Home = ({ ikon, epic }: Props) => {
                 <Typography>
                   7 Day Snow:{' '}
                   <span style={{ fontWeight: 600 }}>
-                    {getPassSnowTotal(epic)}"
+                    {getPassSnowTotal(epic)}&quot;
                   </span>
                 </Typography>
               </Box>
@@ -82,7 +82,7 @@ const Home = ({ ikon, epic }: Props) => {
                 <Typography>
                   7 Day Snow:{' '}
                   <span style={{ fontWeight: 600 }}>
-                    {getPassSnowTotal(ikon)}"
+                    {getPassSnowTotal(ikon)}&quot;
                   </span>
                 </Typography>
               </Box>

@@ -59,7 +59,7 @@ const MobileAccordionDetails = ({ weather, day }: Props) => {
               sx={{ fontSize: 18, alignSelf: 'center', color: 'white' }}
             />
             <Typography sx={{ flexShrink: 0, alignSelf: 'center' }}>
-              {weather.snow}"
+              {weather.snow}&quot;
             </Typography>
           </Box>
         </Box>
