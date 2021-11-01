@@ -6,7 +6,7 @@ import {
   mpsToMph,
 } from '../utilities/unitConvert';
 
-const baseUrl = 'http://127.0.0.1:8080/api';
+const baseUrl = 'https://ski-pass-snow-compare-api.herokuapp.com/api';
 
 export const fetchResortData = async () => {
   const resortsResponse = await axios.get<ResortBase[]>(`${baseUrl}/resorts`);
