@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import theme from '../styles/muiTheme';
-import '../styles/style.css';
+import '../styles/style.scss';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

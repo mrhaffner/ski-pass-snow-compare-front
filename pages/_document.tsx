@@ -21,6 +21,12 @@ export default class MyDocument extends Document {
             position: 'relative',
           }}
         >
+          <div className="snow layer1 a"></div>
+          <div className="snow layer1"></div>
+          <div className="snow layer2 a"></div>
+          <div className="snow layer2"></div>
+          <div className="snow layer3 a"></div>
+          <div className="snow layer3"></div>
           <Main />
           <NextScript />
         </body>
