@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger our build webhook on Vercel
-      - shell: bash
+        shell: bash
         env:
           URI: ${{ secrets.VERCEL_CRON_BUILD_HOOK }}
         run: curl -s -X POST "$URI"
