@@ -5,3 +5,7 @@ This project was built with:
 - NextJS / React
 - Typescript
 - Material UI
+
+Thank you to Red Stapler for the great tutorial on making a snow effect background.
+
+Thank you to Steve Schoger @ HeroPatterns for the excellent background pattern for the mobile footer.
