@@ -1,6 +1,6 @@
 ### This is the front end for my Ski Pass Snow Compare project. 
 
-### Description:
+#### Description:
 
 This project compares upcoming snowfall between ski resorts on the IKON and Epic mega passes for the upcoming week.  A free tier weather API was used for upcoming weather data with low daily limits on API usage.  Due to this limitation, the project was structured as follows:
 1. An API and PostrgeSQL database hosted on Heroku collects weather data for all resorts early in the morning
