@@ -29,10 +29,10 @@ This project takes advantage of several free tier services:
 - Next JS web page on Vercel
 - Github Actions webhooks
 
-Github Actions are used as a sort of pipeline to work with free tier services:
+Github Actions are used to create a daily update pipeline:
 
 1. Github Actions webook wakes up the sleeping Spring Boot API
-2. Spring Boot App gets updatesd forecast information from the weather API
+2. Spring Boot App gets updated forecast information from the weather API
 3. Updated forecast information is save to the PostrgeSQL databse
 4. Github Actions webook triggers the Next JS app to do a build
 5. Next JS app fetches updated data from the Spring Boot API and completes the build
