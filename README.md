@@ -1,6 +1,25 @@
-### This is the front end for my Ski Pass Snow Compare project. 
+## This is the front end for my Ski Pass Snow Compare project 
 
-#### Description:
+## Visit the live webpage:
+
+https://ski-pass-snow-compare-front.vercel.app/
+
+## Features:
+- Aggregates and displays snow forecasts for several major ski resorts
+- Compares upcoming snow totals between the major ski Mega Passes (Epic and IKON)
+- Updates daily
+
+## Visit the back end's repository:
+
+https://github.com/mrhaffner/ski-pass-snow-compare
+
+## Purpose:
+- Become more proficient with Typescript
+- Explore the NextJS - the fantastic React framework
+- Learn Java (I started learning Java 3 days before started this project!)
+- Explore Object-Oriented Design (Why I chose Java)
+
+## Description:
 
 This project compares upcoming snowfall between ski resorts on the IKON and Epic mega passes for the upcoming week.  A free tier weather API was used for upcoming weather data with low daily limits on API usage.  Due to this limitation, the project was structured as follows:
 1. An API and PostrgeSQL database hosted on Heroku collects weather data for all resorts early in the morning.
@@ -9,21 +28,13 @@ This project compares upcoming snowfall between ski resorts on the IKON and Epic
 3. A Github Action triggers a webhook to Vercel to rebuild the webpage every morning after the weather data is collected.
 4. It would have been possible to accomplish all of this without the additional API and database, but the data is being stored for later analysis.  Building the API also served as an opportunaity to learn Java and improve my OOP skills.
 
-#### Main technologies and libraries used:
+## Built with:
 
 - NextJS / React
 - Typescript
 - Material UI
 
-#### Visit the live webpage:
-
-https://ski-pass-snow-compare-front.vercel.app/
-
-#### Visit the back end's repository:
-
-https://github.com/mrhaffner/ski-pass-snow-compare
-
-#### Acknowledgements:
+## Acknowledgements:
 
 - [Weatherbit](https://www.weatherbit.io/) for the weather data.
 - Red Stapler for the great tutorial on making a snow effect background.
