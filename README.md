@@ -8,7 +8,7 @@
 
 ~~https://ski-pass-snow-compare-front.vercel.app/~~
 
-Unfortunately, Heroku no longers a free tier, so the back end is non-functional.
+Unfortunately, Heroku no longer offers a free tier, so the back end is non-functional.
 
 ## Visit the back end's repository:
 
